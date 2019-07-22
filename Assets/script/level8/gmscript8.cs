@@ -34,7 +34,7 @@ public class gmscript8 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		PlayerPrefs.SetInt("currentLevel",6);//must change in level
+		PlayerPrefs.SetInt("currentLevel",8);//must change in level
         score = PlayerPrefs.GetInt("score");
 		tempscore = score;
 		
@@ -62,18 +62,18 @@ public class gmscript8 : MonoBehaviour
 		if (lettercount==3)//must change in level
 		{
 			switch(currentword)
-				{case "AIM":innerlevel("I","A","R","N","B","B");
+				{case "MID":innerlevel("I","A","R","N","B","D");
 				
 						break;
-				case "BRAN":innerlevel("I","E","T","L","S","B");//must change in level
+				case "NIB":innerlevel("I","E","T","L","S","B");//must change in level
 						break;
-				case "TILE":innerlevel("E","A","D","L","R","B");
+				case "BET":innerlevel("E","A","D","L","R","S");
 						break;
-				case "LARD":innerlevel("A","E","R","B","N","B");
+				case "LAD":innerlevel("A","E","R","B","N","I");
 						break;
-				case "BRAE":innerlevel("E","A","N","M","R","B");
+				case "BIN":innerlevel("E","A","N","M","R","S");
 						break;
-				case "MARE":StartCoroutine(nextleveltimer());
+				case "ERA":StartCoroutine(nextleveltimer());
 						break;
 				default:			
 							if(!templist.Contains(currentword))
@@ -158,7 +158,7 @@ public class gmscript8 : MonoBehaviour
     }
 	 IEnumerator nextleveltimer()
 	 {	tempscore+=20;	
-		message.GetComponent<TextMesh>().text="Condratulations ";
+		message.GetComponent<TextMesh>().text="You Won ";
 		scorebox.GetComponent<TextMesh>().text="score "+tempscore;
 		sinhalaword.GetComponent<TextMesh>().text=dictionary.dic1[currentword];
 		englishword.GetComponent<TextMesh>().text=currentword;
@@ -169,7 +169,7 @@ public class gmscript8 : MonoBehaviour
 		templist.Clear();
 		yield return new WaitForSecondsRealtime(5);
 		//congrats.SetActive(false);
-		SceneManager.LoadScene (2,LoadSceneMode.Single);
+		//SceneManager.LoadScene (2,LoadSceneMode.Single);
 		
 	 }
 	 public void innerlevel(string a,string b,string c,string d,string e,string f)

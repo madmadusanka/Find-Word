@@ -34,6 +34,14 @@ public class gmscript : MonoBehaviour
         score = PlayerPrefs.GetInt("score");
 		tempscore = score;
 		level=1;
+		lettercount=0;
+		currentword=null;
+		letter1.SetActive(true);
+		letter2.SetActive(true);
+		letter3.SetActive(true);
+		wordbox1.GetComponent<TextMesh>().text=null;
+		wordbox2.GetComponent<TextMesh>().text=null;
+		wordbox3.GetComponent<TextMesh>().text=null;
 		
     }
 
@@ -152,7 +160,7 @@ public class gmscript : MonoBehaviour
     }
 	 IEnumerator nextleveltimer()
 	 {	tempscore+=20;	
-		message.GetComponent<TextMesh>().text="Condratulations ";
+		message.GetComponent<TextMesh>().text="congratulations ";
 		scorebox.GetComponent<TextMesh>().text="score "+tempscore;
 		sinhalaword.GetComponent<TextMesh>().text=dictionary.dic1[currentword];
 		englishword.GetComponent<TextMesh>().text=currentword;
@@ -164,7 +172,7 @@ public class gmscript : MonoBehaviour
 		templist.Clear();
 		yield return new WaitForSecondsRealtime(5);
 		//congrats.SetActive(false);
-		SceneManager.LoadScene (level, LoadSceneMode.Single);
+		SceneManager.LoadScene (2, LoadSceneMode.Single);
 		
 	 }
 	 public void innerlevel(string a,string b,string c)

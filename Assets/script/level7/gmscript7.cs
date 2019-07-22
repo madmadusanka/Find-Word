@@ -62,18 +62,18 @@ public class gmscript7 : MonoBehaviour
 		if (lettercount==3)//must change in level
 		{
 			switch(currentword)
-				{case "AIM":innerlevel("I","A","R","N","B");
+				{case "DIE":innerlevel("W","S","E","T","R");
 				
 						break;
-				case "BRAN":innerlevel("I","E","T","L","S");//must change in level
+				case "WET":innerlevel("I","E","T","L","S");//must change in level
 						break;
-				case "TILE":innerlevel("E","A","D","L","R");
+				case "TIE":innerlevel("E","A","D","L","R");
 						break;
-				case "LARD":innerlevel("A","E","R","B","N");
+				case "RAD":innerlevel("A","E","R","B","N");
 						break;
-				case "BRAE":innerlevel("E","A","N","M","R");
+				case "BAN":innerlevel("E","A","N","M","R");
 						break;
-				case "MARE":StartCoroutine(nextleveltimer());
+				case "ARM":StartCoroutine(nextleveltimer());
 						break;
 				default:			
 							if(!templist.Contains(currentword))
@@ -157,7 +157,7 @@ public class gmscript7 : MonoBehaviour
     }
 	 IEnumerator nextleveltimer()
 	 {	tempscore+=20;	
-		message.GetComponent<TextMesh>().text="Condratulations ";
+		message.GetComponent<TextMesh>().text="Congratulations ";
 		scorebox.GetComponent<TextMesh>().text="score "+tempscore;
 		sinhalaword.GetComponent<TextMesh>().text=dictionary.dic1[currentword];
 		englishword.GetComponent<TextMesh>().text=currentword;
@@ -168,7 +168,7 @@ public class gmscript7 : MonoBehaviour
 		templist.Clear();
 		yield return new WaitForSecondsRealtime(5);
 		//congrats.SetActive(false);
-		SceneManager.LoadScene (2,LoadSceneMode.Single);
+		SceneManager.LoadScene (8,LoadSceneMode.Single);
 		
 	 }
 	 public void innerlevel(string a,string b,string c,string d,string e)

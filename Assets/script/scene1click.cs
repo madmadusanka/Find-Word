@@ -16,7 +16,7 @@ public class scene1click : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        levels=PlayerPrefs.GetInt("currentLevel");
     }
 		public void newgame()
 		{
@@ -31,4 +31,15 @@ public class scene1click : MonoBehaviour
 			SceneManager.LoadScene (levels, LoadSceneMode.Single);
 			
 		}
+				 public void instruction()
+		{	
+			SceneManager.LoadScene (9, LoadSceneMode.Single);
+			
+		}
+			 public void instructionback()
+		{	
+			SceneManager.LoadScene ("Start", LoadSceneMode.Single);
+			
+		}
+		 
 }
